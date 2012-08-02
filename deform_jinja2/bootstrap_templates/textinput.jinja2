@@ -7,15 +7,15 @@
         {% endif %}
        id="{{field.oid}}"
         {% if field.description %}
-       placeholder="{{ field.description }}"
+       placeholder="{{ _(field.description) }}"
         {% endif %}/>
-<script type="text/javascript">
-    deform.addCallback(
-            '{{field.oid}}',
-            function (oid) {
-                {% if field.widget.mask %}
+{% if field.widget.mask %}
+    <script type="text/javascript">
+        deform.addCallback(
+                '{{field.oid}}',
+                function (oid) {
                     $("#" + oid).mask("{{ field.widget.mask }}",
                             {placeholder:"{{ field.widget.mask_placeholder }}"});
-                {% endif %}
-            });
-</script>
+                });
+    </script>
+{% endif %}

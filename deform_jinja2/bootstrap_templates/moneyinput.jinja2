@@ -9,12 +9,12 @@
         {% if field.description %}
        placeholder="{{ field.description }}"
         {% endif %}/>
-<script type="text/javascript">
-    deform.addCallback(
-            '{{field.oid}}',
-            function (oid) {
-                {% if field.widget.options %}
+{% if field.widget.options %}
+    <script type="text/javascript">
+        deform.addCallback(
+                '{{field.oid}}',
+                function (oid) {
                     $("#" + oid).maskMoney({{ mask_options }});
-                {% endif %}
-            });
-</script>
+                });
+    </script>
+{% endif %}

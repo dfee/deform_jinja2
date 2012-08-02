@@ -1,10 +1,6 @@
 <textarea id="{{ field.oid }}"
-          name="{{ field.name }}"
-        {% if field.widget.css_class %}
-          class="{{ field.widget.css_class }}"
-        {% endif %}>{{ cstruct }}</textarea>
-<script language="javascript"
-        type="text/javascript">
+          name="{{ field.name }}">{{ cstruct }}</textarea>
+<script type="text/javascript">
     deform.addCallback(
             '{{ field.oid }}',
             function (oid) {

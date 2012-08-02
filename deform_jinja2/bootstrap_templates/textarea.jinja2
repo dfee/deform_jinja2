@@ -11,6 +11,5 @@
             id="{{ field.oid }}"
             name="{{ field.name }}"
         {% if field.description %}
-            placeholder="{{ field.description }}"
+            placeholder="{{ _(field.description) }}"
         {% endif %}>{{ cstruct }}</textarea>
-

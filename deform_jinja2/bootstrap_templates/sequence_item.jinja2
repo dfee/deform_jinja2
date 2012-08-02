@@ -14,7 +14,6 @@
   {% for msg in field.error.messages() %}
 {% set errstr = 'error-%s' % field.oid %}
 {% set pid = (loop.index0==0 and errstr) or ('%s-%s' % (errstr, loop.index0)) %}
-%>
   <p id="{{ pid }}" class="{{ field.widget.error_class }}">{{ _(msg) }}</p>
   {% endfor %}
   {% endif %}
