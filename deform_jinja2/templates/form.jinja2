@@ -1,9 +1,5 @@
-<form 
-id="{{field.formid}}"
-action="{{field.action}}"
-method="{{field.method}}"
-enctype="multipart/form-data"
-accept-charset="utf-8"
+<form id="{{field.formid}}" action="{{field.action}}" method="{{field.method}}"
+      enctype="multipart/form-data" accept-charset="utf-8"
 {% if field.css_class %}
  class="{{field.css_class}}"
 {% endif %}
@@ -47,9 +43,8 @@ accept-charset="utf-8"
               value="{{ _(button.value) }}"
               {% if button.disabled %}
                 disabled="disabled"
-              {% endif %}
-              >
-            <span>{{ _(button.title) }}</span>
+              {% endif %}>
+                    {{ _(button.title) }}
           </button>
         {% endfor %}
       </li>
@@ -66,15 +61,13 @@ accept-charset="utf-8"
          var options = {
            target: '#' + oid,
            replaceTarget: true,
+           success:function () {
+             deform.processCallbacks();
+             deform.focusFirstInput();
+           }
          };
-         var extra_options = {{field.ajax_options}};
-         var name;
-         if (extra_options) {
-           for (name in extra_options) {
-             options[name] = extra_options[name];
-           };
-         };
-         $('#' + oid).ajaxForm(options);
+         var extra_options = {{field.ajax_options}} || {};
+         $('#' + oid).ajaxForm($.extend(options, extra_options));
    });
 </script>
 {% endif %}
