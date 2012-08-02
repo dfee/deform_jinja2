@@ -1,5 +1,8 @@
 <select name="{{ field.name }}"
         id="{{ field.oid }}"
+        {% if field.widget.css_class %}
+        class="{{ field.widget.css_class }}"
+        {% endif %}
         {% if field.widget.size %}
         size="{{ field.widget.size }}"
         {% endif %}
@@ -10,9 +13,6 @@
         <option
                 {% if value|string == cstruct %}
                     selected="selected"
-                {% endif %}
-                {% if field.widget.css_class %}
-                    class="{{ field.widget.css_class }}"
                 {% endif %}
                     value="{{ value }}">{{ description }}</option>
     {% endfor %}
