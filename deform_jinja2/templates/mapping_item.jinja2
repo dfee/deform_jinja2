@@ -3,7 +3,10 @@
     {% if field.error and field.widget.error_class %}
     class="{{field.widget.error_class}}"
     {% endif %}
-    title="{{_(field.description)}}" id="item-{{field.oid}}">
+    {% if field.description %}
+    title="{{_(field.description)}}" 
+    {% endif %}
+    id="item-{{field.oid}}">
 {% endif %}
 
 <!-- mapping_item -->
