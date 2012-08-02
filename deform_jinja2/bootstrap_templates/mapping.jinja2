@@ -1,6 +1,6 @@
 {% set rndr = field.renderer %}
 {% set tmpl = field.widget.item_template %}
-
+<fieldset class="deformMappingFieldset">
   <!-- mapping -->
   {% if field.title %}
     <legend>{{_(field.title)}}</legend>
@@ -24,3 +24,4 @@
     <input type="hidden" name="__end__" value="{{field.name}}:mapping"/>
   </ul>
   <!-- /mapping -->
+</fieldset>

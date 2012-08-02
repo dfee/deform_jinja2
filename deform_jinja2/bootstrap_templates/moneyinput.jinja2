@@ -1,9 +1,9 @@
-<input type="text" name="{{ field.name }}" value="{{ cstruct }}"
+<input type="text" name="{{field.name}}" value="{{cstruct}}"
         {% if field.widget.size %}
-       size="{{ field.widget.size }}"
+       size="{{field.widget.size}}"
         {% endif %}
         {% if field.widget.css_class %}
-       class="{{ field.widget.css_class }}"
+       class="{{field.widget.css_class}}"
         {% endif %}
        id="{{field.oid}}"
         {% if field.description %}
@@ -13,9 +13,8 @@
     deform.addCallback(
             '{{field.oid}}',
             function (oid) {
-                {% if field.widget.mask %}
-                    $("#" + oid).mask("{{ field.widget.mask }}",
-                            {placeholder:"{{ field.widget.mask_placeholder }}"});
+                {% if field.widget.options %}
+                    $("#" + oid).maskMoney({{ mask_options }});
                 {% endif %}
             });
 </script>

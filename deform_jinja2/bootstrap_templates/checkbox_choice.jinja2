@@ -3,7 +3,7 @@
     {% for value, title in field.widget.values %}
     <li class="deformSet-item">
       <input
-        {% if value in cstruct %}
+        {% if value|string in cstruct %}
             checked="True"
         {% endif %}
         {% if field.widget.css_class %}
