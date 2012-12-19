@@ -44,7 +44,7 @@ accept-charset="utf-8"
             id="{{field.formid+button.name}}"
             name="{{button.name}}"
             type="{{button.type}}"
-            class="btnText submit primaryAction"
+            class="btnText submit primaryAction {{button.css_class}}"
             value="{{ _(button.value) }}"
             {% if button.disabled %}
             disabled="disabled"

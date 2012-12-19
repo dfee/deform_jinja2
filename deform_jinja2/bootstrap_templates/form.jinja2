@@ -38,7 +38,7 @@
                         id="{{field.formid+button.name}}"
                         name="{{button.name}}"
                         type="{{button.type}}"
-                        class="btn {% if loop.first %}btn-primary{% endif %}"
+                        class="btn {% if loop.first %}btn-primary{% endif %} {{button.css_class}}"
                         value="{{ _(button.value) }}"
                         {% if button.disabled %}
                         disabled="disabled"
