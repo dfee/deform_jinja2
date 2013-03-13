@@ -14,7 +14,7 @@
         {% endif %}>
     {% for value, description in field.widget.values %}
         <option
-                {% if value|string == cstruct %}
+                {% if value|string in cstruct or value|string == cstruct %}
                     selected="selected"
                 {% endif %}
                     value="{{ value }}">{{ description }}</option>
