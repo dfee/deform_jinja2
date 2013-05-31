@@ -1,14 +1,32 @@
-<input type="text" name="{{ field.name }}" value="{{ cstruct }}"
-        {% if field.widget.size %}
-       size="{{ field.widget.size }}"
-        {% endif %}
-        {% if field.widget.css_class %}
-       class="{{ field.widget.css_class }}"
-        {% endif %}
-       id="{{field.oid}}"
-        {% if field.description %}
-       placeholder="{{ _(field.description) }}"
-        {% endif %}/>
+<div class="
+  {% if field.widget.input_prepend %}
+    input-prepend
+  {% endif %}
+  {% if field.widget.input_append %}
+    input-append
+  {% endif %}">
+
+  {% if field.widget.input_prepend %}
+    <span class="add-on">{{ field.widget.input_prepend }}</span>
+  {% endif %}
+  <input type="text" name="{{ field.name }}" value="{{ cstruct }}"
+          {% if field.widget.size %}
+         size="{{ field.widget.size }}"
+          {% endif %}
+          {% if field.widget.css_class %}
+         class="{{ field.widget.css_class }}"
+          {% endif %}
+         id="{{field.oid}}"
+          {% if field.description %}
+         placeholder="{{ _(field.description) }}"
+          {% endif %}
+          {% if field.required %}
+         required
+          {% endif %}/>
+  {% if field.widget.input_append %}
+    <span class="add-on">{{ field.widget.input_append }}</span>
+  {% endif %}
+</div>
 {% if field.widget.mask %}
     <script type="text/javascript">
         deform.addCallback(

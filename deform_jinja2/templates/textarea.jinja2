@@ -12,4 +12,7 @@
             name="{{ field.name }}"
         {% if field.description %}
             placeholder="{{ _(field.description) }}"
+        {% endif %}
+        {% if field.required %}
+            required 
         {% endif %}>{{ cstruct }}</textarea>

@@ -27,6 +27,7 @@ logs
 # Vim
 *.swp
 .rope*
+*.un~
 
 # Tags for git-helpers
 tags
